@@ -6,7 +6,9 @@ vector<int> commonElements(int a[],int b[],int c[],int n1,int n2,int n3){
     while (ptr1<n1 && ptr2<n2 && ptr3<n3)
     {
         if (a[ptr1]==b[ptr2] && b[ptr2]==c[ptr3]){
-            if (ans[ans.size()-1]!=a[ptr1])
+            if (!ans.empty() && ans[ans.size()-1]!=a[ptr1])
+            ans.push_back(a[ptr1]);
+            if (ans.empty())
             ans.push_back(a[ptr1]);
             ptr1++;
             ptr2++;
