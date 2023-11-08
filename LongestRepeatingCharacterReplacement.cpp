@@ -6,26 +6,19 @@ int characterReplacement(string s,int k){
     int maxlenght=0;
     int maxfreq=0;
     map<char,int>mapping;
-    while (end<s.size() && start<=end)
-    {
+    while (end<s.size() && start<=end){
         mapping[s[end]]++;
         maxfreq=max(maxfreq,mapping[s[end]]);
-        int length_present=end-start+1;
-        if (length_present-maxfreq<=k){
-            maxlenght=length_present;
+        if (end-start+1-maxfreq<=k){
+            maxlenght=max(maxlenght,end-start+1);
             end++;
         }
-        else{
+        else {
             mapping[s[start]]--;
-            maxfreq=0;
-            for(auto it:mapping){
-                maxfreq=max(maxfreq,mapping[it.first]);
-            }
+            start--;
             end++;
-            start++;
         }
     }
-    
     return maxlenght;
 };
 int main(){
