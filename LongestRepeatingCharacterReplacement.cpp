@@ -14,6 +14,7 @@ int characterReplacement(string s,int k){
             end++;
         }
         else {
+            // At this point their is no need to change the maxfrequency thing
             mapping[s[start]]--;
             start--;
             end++;
