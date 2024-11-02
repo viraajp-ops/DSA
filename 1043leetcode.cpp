@@ -31,4 +31,5 @@ int main(){
     cin>>k;
     cout<<maxSumAfterPartitioning(arr,k);
     return 0;
+    // hello
 }
